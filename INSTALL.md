@@ -2,12 +2,19 @@
 
 ## Overview
 
-The current version of OCCAM runs on a linux webserver. The installation procedure is fairly well defined for linux, so you should be able to get OCCAM up and running on your linux system. This will probably require the use of virtual environment (described below) or some other method to control the python environment. For most users, the recommended installation method at this time is to use VirtualBox, which will let you create a fully containerized linux machine inside your existing OS. This will isolate OCCAM inside the VirtualBox and not require configuration changes to your larger system. The procedure is as follows:
+Updated to install with Docker. The current version of OCCAM runs on a linux webserver. The installation procedure is fairly well defined for linux, so you should be able to get OCCAM up and running on your linux system. This will probably require the use of virtual environment (described below) or some other method to control the python environment. For most users, the recommended installation method at this time is to use VirtualBox, which will let you create a fully containerized linux machine inside your existing OS. This will isolate OCCAM inside the VirtualBox and not require configuration changes to your larger system. The procedure is as follows:
 
 1. Install a virtual machine or virtual environment, and install Ubuntu or some other Linux server on your (virtual) machine, and install dependencies
 2. Install OCCAM using git
 3. Install apache and configure it for CGI-bin
 4. Set file ownership and permissions to allow apache to access the files
+
+### Install OCCAM with Docker
+1. Change directory repository root /occam
+2. <code> docker build -t occam-image . </code>
+3. <code> docker run -d -p 80:80 occam-image  </code>  
+Will run on localhost. Permissions are open.
+Modify settings for your security needs.
 
 So let's begin:
 
@@ -83,12 +90,6 @@ Once the environment is activated, anything that you do that makes environment c
 
 Now that you have done the setup of your virtual machine or environment, you can actually install OCCAM.
 
-### Install OCCAM with Docker
-1. Change directory repository root /occam
-2. <code> docker build -t occam-image . </code>
-3. <code> docker run -d -p 80:80 occam-image  </code>  
-Will run on localhost. Permissions are open.
-Modify settings for your security needs.
 
 ### Install OCCAM
 
