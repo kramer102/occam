@@ -83,6 +83,13 @@ Once the environment is activated, anything that you do that makes environment c
 
 Now that you have done the setup of your virtual machine or environment, you can actually install OCCAM.
 
+### Install OCCAM with Docker
+1. Change directory repository root /occam
+2. <code> docker build -t occam-image . </code>
+3. <code> docker run -d -p 80:80 occam-image  </code>  
+Will run on localhost. Permissions are open.
+Modify settings for your security needs.
+
 ### Install OCCAM
 
 Now that you have a machine with the right dependencies set up, you can install and setup OCCAM.  First you need to get the OCCAM repository onto your machine.  You can do this by downloading the ZIP unzipping the folder wherever you like, or by using git.
